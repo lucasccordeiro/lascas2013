@@ -595,15 +595,16 @@ cada um dos $S$ filtros $\mathbf{\Theta}_{\boldsymbol\phi_{i}}$ (obtidos no trei
 $C_{\boldsymbol\phi_{i}}(B_{\mathbf{z}})$ resultando em um vetor DSNR$_{2}$ associado denominado $\mathbf{d}_{B_{\mathbf{z}}}$. O classificador {\it AdaBoost} irá categorizar $\mathbf{d}_{B_{\mathbf{z}}}$ como positivo (o centro de $B_{\mathbf{z}}$ é ponto fiducial) ou negativo (o centro de $B_{\mathbf{z}}$ não é ponto fiducial).
 
 
-\subsection{Processamento Paralelo dos Filtros Discriminativos}\label{sec:filtro-paralelo}
+\subsection{Parallel Processing of Discriminative Filters}\label{sec:filtro-paralelo}
 
-Podemos notar na etapa de teste, descrita na Seção \ref{sec:sistema-pf}, que o processamento de cada bloco $B_{\mathbf{z}}$ tem impacto significativo no tempo de resposta do sistema. Considerando um exemplo em que as imagens possuem regiões elípticas de interesse que contêm $1100$ blocos e que cada bloco deve ser filtrado por $63$ filtros discriminativos então, para cada imagem, será necessário computarmos $69300$ operações de filtragem. Dessa forma, iremos modificar o processamentos dos blocos utilizando um modelo paralelo conforme representado na Figura \ref{fig:teste_paralelo}. Neste modelo, convoluímos $K$ filtros em paralelo com os blocos $B_{\mathbf{z}}$ ($K \leq S $), ou seja, realizamos $K$ filtragens ao mesmo tempo. Desta forma, as matrizes $C_{\boldsymbol\phi_i}(B_\mathbf{z})$, com $i=\{1,2,\ldots,K\}$ são geradas ao mesmo tempo (levando em consideração que a convolução de um bloco $B_{\mathbf{z}}$ com um filtro $\boldsymbol\Theta_{\boldsymbol\phi_i}$ consome o mesmo tempo de processamento). Como consequência, o tempo de resposta do sistema é reduzido.
+During the testing phase, which is described in Section~\ref{sec:sistema-pf}, the processing of each block $B_{\mathbf{z}}$ has a significant impact in the time response of the system. As an example, consider that the images are elliptical regions of interest, which contain $1100$ blocks and each block must be filtered by $63$ discriminative filters. As a result, for each image, one needs to compute $69300$ filtering operations. As a consequence, we modify the processing blocks using a parallel model, as shown in Figure~\ref{fig:teste_paralelo}. In this particular model, we apply the convolution operation to the $K$ filters in parallel with blocks $B_{\mathbf {z}}$ ($K \leq S$), i.e., $K$ filtering performed at the same time. Thus, the matrices $C_{\boldsymbol\phi_i}(B_\mathbf{z})$, with $i=\{1,2,\ldots,K\}$ are generated at the same time (assuming that a convolution block $B_{\mathbf{z}}$ with a filter $\boldsymbol\Theta_{\boldsymbol\phi_i}$ consumes the same processing time). Therefore, the time response can be substantially reduced.
+
 \begin{figure}[htb]
  \begin{center}
   % Requires \usepackage{graphicx}
   \centering
   \includegraphics [scale=0.7]{./figuras/diagrama_teste_paralelo_DF-PCA-B.eps}
-  \caption{Modelo paralelo do diagrama em blocos para teste do sistema de detecção de pontos fiduciais.}
+  \caption{Parallel model of the block diagram to test the detection of fiducial points.}
   \label{fig:teste_paralelo}
  \end{center}
 \end{figure}
