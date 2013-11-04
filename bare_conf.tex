@@ -1,0 +1,755 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE!
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference]{IEEEtran}
+
+\usepackage{amsmath,epsfig}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{color,colordvi}
+\usepackage{cite}
+\usepackage{setspace}
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage{dsfont}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{epstopdf}
+
+
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\hyphenation{dis-cri-mi-na-ti-vos}
+\hyphenation{o-fe-re-cem}
+\hyphenation{a-pre-sen-ta-mos}
+\hyphenation{pro-ble-ma}
+\hyphenation{ca-rac-te-ri-za-do}
+\hyphenation{le-gen-da}
+\hyphenation{i-ma-gem}
+\hyphenation{pro-ba-bi-li-da-de}
+\hyphenation{li-te-ra-tu-ra}
+\hyphenation{me-lho-rar}
+
+\linespread{1.02}
+
+
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Avaliação do Processamento Paralelo dos Filtros Discriminativos em um Sistema de Detecção de Pontos Fiduciais}
+
+
+%AUTORES ------------------------------------------------------------------------------
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{
+\IEEEauthorblockN{Pedro Donadio$^{1}$,
+      Kenny Vinente$^{1}$, Waldir Sabino$^{1,2}$, Lucas Cordeiro$^{1,2}$}
+\IEEEauthorblockA{
+$^{1}$ PPGEE, Universidade Federal do Amazonas, \\
+Manaus, AM, CEP 69077-000, Brasil. \\
+$^{2}$ DTEC/PPGEE/CETELI,  Universidade Federal do Amazonas, \\
+Manaus, AM, CEP 69077-000, Brasil. \\
+e-mails: pedrodonadio7@gmail.com, kennyvinente@gmail.com, waldirsabino@gmail.com, lucasccordeiro@gmail.com}
+}
+%AUTORES ------------------------------------------------------------------------------
+
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+%
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3},
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+%RESUMO ------------------------------------------------------------------------------
+\begin{abstract}
+O método por Filtragem Discriminativa proporciona o reconhecimento
+de padrões através de filtros bidimensionais. Recentemente, foi proposto o projeto
+de filtros discriminativos robustos sendo concebidos utilizando-se a análise de
+componentes principais. Uma característica importante dos filtros robustos consiste
+no número elevado de filtragens que devem ser processadas. Neste artigo, iremos
+investigar um modelo paralelo para filtragem dos blocos pertencentes as imagens que serão processadas. O modelo
+paralelo para filtragem foi avaliado utilizando-se um sistema de detecção de 11 pontos fiduciais. Os filtros discriminativos foram  projetados empregando-se um conjunto de 1718 imagens da base de dados {\it Feret} e para processamento dos blocos foram usadas 568 imagens diferentes das usadas no projeto. Em nossos experimentos, verificamos que o modelo proposto é eficiente e reduz significativamente o tempo de resposta de processamento.
+
+%The Discriminative Filtering technique performs pattern recognition
+%using a two-dimensional filter. It has a closed-form design, based
+%on the pattern and the statistics of the image set. Here, we
+%investigate the use of Discriminative Filtering for detecting
+%fiducial points in human faces. We show that designing
+%discriminative filters for the principal components increases
+%robustness. The method is assessed in a fiducial points detection
+%framework using a Gentle AdaBoost classifier.
+%Discriminative filtering is a pattern recognition technique which aim maximize the energy of output signal when a pattern is found. Looking improve the perfomance of filter response, was incorporated the principal component analysis in discriminative filters project. In this work we looking investigate the influence of the amount of principal components in the filter performance and by consequence the classifier applied in fiducial points detection. We showed those amount of principal components affects directly the classifier performance, both the rate of true and false positives.
+\end{abstract}
+
+
+
+
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+% no keywords
+%RESUMO ------------------------------------------------------------------------------
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+%SECOES ------------------------------------------------------------------------------
+\section{Introdução}
+%%% WALDIR e LUCAS
+Nós últimos anos, é crescente o interesse da comunidade científica em métodos que proporcionam a
+detecção ou reconhecimento de padrões através de filtros lineares. Representantes desta
+classe de métodos, utilizados para o reconhecimento de padrões
+unidimensionais e bidimensionais, são os métodos por Filtragem
+Discriminativa \cite{artigo-fd-3,artigo-fd-8}.
+
+O método por Filtragem Discriminativa foi inicialmente desenvolvido por J. Ben-Arie e
+K. R. Rao \cite{exm-5-ori} e o seu objetivo
+concentrava-se no reconhecimento de padrões simples tais como quinas. Em \cite{icip-fd}, os autores propõem o projeto de um filtro robusto. Os filtros discriminativos são projetados através da Análise de Componentes Principais \cite{eigenface1}. Nessa abordagem, os filtros são projetados para detectar as componentes principais de maior variância associadas aos padrões de interesse. Os autores aplicaram os filtros robustos em um problema de detecção de pontos fiduciais em faces humanas e os resultados foram promissores.
+
+Um aspecto importante dos filtros robustos projetados para as componentes principais consiste na quantidade de componentes utilizadas para um desempenho satisfatório do sistema para detecção de pontos fiduciais. Em \cite{icip-fd}, os autores expõem em seus experimentos que são necessários entre 53 e 63 filtros para um desempenho adequado do sistema, em termos de taxas de verdadeiros positivos e falsos negativos. Este aspecto influência diretamente no tempo de processamento das imagens para detecção do ponto fiducial. 
+
+Neste trabalho, propomos um modelo em paralelo para filtragem dos blocos contidos na imagens. Nessa proposta, os filtros são convoluídos em paralelo com o bloco que está sendo processado e, dessa forma, o sinal filtrado é obtido de forma instantânea. Para avaliar o modelo paralelo proposto iremos utilizá-lo em um sistema de detecção de 11 pontos fiduciais. Os filtros discriminativos serão projetados empregando-se um conjunto de 1718 imagens da base de dados {\it Feret} \cite{feret-artigo1, feret-artigo2}. Para processamentos dos blocos iremos utilizar 568 imagens diferentes das usadas no projeto que pertencem a mesma base.
+
+Este artigo está organizado da seguinte forma: na Seção \ref{sec:fd}, realizamos uma revisão
+dos conceitos associados ao método por Filtragem Discriminativa. Na Seção \ref{sec:proposta}, apresentamos a proposta deste artigo que consiste na avaliação de um modelo paralelo eficiente para filtragem dos filtros discriminativos, os resultados experimentais são apresentados nesta seção. Por fim, as conclusões são discutidas na Seção \ref{sec:con}.
+
+
+\section{Filtragem Discriminativa}\label{sec:fd}
+\subsection{Filtragem Discriminativa}
+
+Nesta técnica, o objetivo é projetar um filtro linear ótimo $\mathbf{\Theta}$ que detecte um padrão de interesse $\mathbf{U}$ presente em um sinal $\mathbf{G}$. Um aspecto importante reside no fato de utilizar filtragem de sinais para detecção. Para avaliar o sinal filtrado $\mathbf{C} = \mathbf{\Theta} \ast \mathbf{U}$, utilizamos a métrica  \textit{Two-Dimensional Discriminative Signal to Noise Ratio} ($\mathrm{DSNR}_{2}$). Matematicamente, a $\mathrm{DSNR}_{2}$ é expressa por:
+\begin{equation}
+\mathrm{DSNR}_{2}(m_{0},n_{0}) = \frac{{c(m_{0},n_{0})}^{2}}{\displaystyle\sum_{i=0}^{\mathrm{M}-1}{}\sum_{j=0}^{\mathrm{N}-1} {c(i,j)}^{2} - {c(m_{0},n_{0})}^{2}}
+\label{eq:02-02}
+\end{equation}
+
+Em \cite{artigo-fd-8}, os autores apresentam uma solução fechada para o projeto do filtro discriminativo que pode ser obtido através da melhor estimativa linear ($mathbf{A}$) que irá determinar a posição do padrão de interesse. Matematicamente, devemos encontrar $\mbox{\boldmath{$\widehat{\delta}$}} = \mathbf{A} \mathbf{g}$. A solução fechada para este problema é expressa por:
+\begin{equation}
+     \mbox{\boldmath{$\widehat{\delta}$}} = \mathbf{F}^{\mathrm{{\it T}}}[\mathbf{F}\mathbf{F}^{\mathrm{{\it T}}}+\mathbf{C}_{\mathrm{b}}]^{-1} \mathbf{g}
+\label{eq:02-04}
+\end{equation}
+em que o super-escrito $^{T}$ é o Hermitiano. O filtro discriminativo $\mathbf{\Theta}$ pode ser obtido por uma inspeção no estimador linear $\mathbf{A}$ \cite{artigo-fd-8}.
+
+\subsection{Filtragem Discriminativa com Análise de Componentes Principais} \label{sec:fd-pca}
+
+Os filtros discriminativos robustos foram propostos em \cite{icip-fd}. Neste trabalho, os autores propõem o projeto de filtros discriminativos utilizando-se as componentes principais \cite{eigenface1} do conjunto de matrizes formado por ocorrências do padrão de interesse. Matematicamente, podemos obter os filtros discriminativos da seguinte maneira: suponha uma variável aleatória $\mathcal{U}_{N\times1}$ com $M$ realizações iguais aos vetores $\mathbf{u}_1,\ldots,\mathbf{u}_M$. As componentes principais $\boldsymbol\Phi = [\boldsymbol\phi_{1}, \ldots, \boldsymbol\phi_{N}]$ e seus autovalores
+$\lambda_{1}$, $\ldots,$ $\lambda_{N}$ podem ser obtidos utilizando a solução do problema de autovalores \cite{eigenface1} descrito a seguir:
+\begin{equation}
+    \mathbf{\Lambda} = \mathbf{\Phi}^{T} \mathbf{\Sigma}_{\mathcal{U}} \mathbf{\Phi}, \nonumber
+\end{equation}
+onde $\mathbf{\Sigma}_{\mathcal{U}}$ a matriz de covariância de $\mathcal{U}$.
+
+Os filtros discriminativos bidimensionais $\mathbf{\Theta}_{\boldsymbol\phi_{1}},\ldots,\mathbf{\Theta}_{\boldsymbol\phi_{S}}$
+serão projetados para $S$ componentes principais $\boldsymbol\phi_1,\ldots,\boldsymbol\phi_S$ com autovalores
+associados iguais à $\lambda_1,\ldots,\lambda_S$, segundo a
+Equação (\ref{eq:02-04}). Assim, a equação do estimador para cada componente principal $i$ é dada por:
+\begin{equation}\label{estimador-linear-fd-pca}
+    \mathbf{A}_{\boldsymbol\phi_i} = \textbf{F}_{\boldsymbol\phi_i}^{T}\left[\textbf{F}_{\boldsymbol\phi_i}
+    \textbf{F}_{\boldsymbol\phi_i}^{T} + \mathbf{C_{b}}_{i}\right]^{-1}.
+\end{equation}
+
+A matriz de covariância $\mathbf{C_{b}}_{i}$ pode ser obtida, segundo \cite{icip-fd}, pelo subespaço ortogonal à componente principal de interesse. Desta forma, a matriz de covariância $\mathbf{C_{b}}_{i}$ associada a componente de interesse $\boldsymbol\phi_i$ poderá ser expressa por:
+\begin{eqnarray}\label{cb1}
+    \mathbf{C_{b}}_{i} =  \sum_{\substack{j=1 \\ j \neq i}}^{N} \psi_{j}
+    \mathbf{F}_{\boldsymbol\phi_j} \mathbf{F}_{\boldsymbol\phi_j}^{T},
+\end{eqnarray}
+em que $\psi_j$ são constantes que indicam a estatística do ruído, e
+$\mathbf{F}_{\boldsymbol\phi_j}$ é a matriz circulante por blocos
+obtida a partir da componente $\boldsymbol\phi_{j}$.
+
+\section{Avaliação do Processamento Paralelo dos Filtros Discriminativos em um Sistema de Detecção de Pontos Fiduciais}
+\label{sec:proposta}
+
+\subsection{Sistema de Detecção de Pontos Fiduciais de Faces Humanas}\label{sec:sistema-pf}
+
+A avaliação do processamento em paralelo dos filtros discriminativos projetados para componentes principais é feita utilizando-se um sistema de detecção de pontos fiduciais  de faces humanas. O sistema completo possui uma etapa de treinamento e outra de teste (observe as Figuras \ref{fig:treinamento} e \ref{fig:teste}). Em ambas etapas, utilizamos um bloco para pré-processamento das imagens, conforme \cite{icip-fd}, que é formado da seguinte maneira: primeiramente, realizamos um enquadramento da face da imagem de entrada utilizando um detector de faces humanas do tipo {\it Viola-Jones} \cite{viola-jones}, a seguir aplicamos um escalonamento da imagem para uma resolução igual a 220 $\times$ 220, após fazemos a correção de iluminação \cite{iluminacao3} e por último, conforme \cite{icip-fd}, selecionamos a região elíptica de interesse utilizando um Modelo Gaussiano à Priori.
+\begin{figure}[htb]
+ \begin{center}
+  % Requires \usepackage{graphicx}
+  \centering
+  \includegraphics [scale=0.7]{./figuras/diagrama_treinamento.eps}
+  \caption{Diagrama em blocos para treinamento do sistema de detecção de pontos fiduciais.}
+  \label{fig:treinamento}
+ \end{center}
+\end{figure}
+\begin{figure}[htb]
+ \begin{center}
+  % Requires \usepackage{graphicx}
+  \centering
+  \includegraphics [scale=0.7]{./figuras/diagrama_teste.eps}
+  \caption{Diagrama em blocos para teste do sistema de detecção de pontos fiduciais.}
+  \label{fig:teste}
+ \end{center}
+\end{figure}
+%
+%\begin{figure}[!htb]
+%\centering
+%\includegraphics[width=3.2in]{figuras/block_diagrama_sistema_generico.eps}
+%\caption{Diagrama em blocos de um sistema de detecção de pontos fiduciais de faces genérico}
+%\label{fig:03-02}
+%\end{figure}
+
+A etapa de treinamento (Figura \ref{fig:treinamento}) pode ser descrita como segue: primeiramente,
+realizamos o pré-processamento da imagem. A seguir, os $S$ filtros
+discriminativos $\boldsymbol\Theta_{\boldsymbol\phi_i}$ serão projetados para cada uma das $S$
+componentes principais. Nesta etapa, selecionamos $50$ blocos pertences à região elíptica de interesse (espacialmente espalhados de forma aleatória) e para cada um destes blocos denominados por $B_\mathbf{z}$ filtra-se $B_{\mathbf{z}}$ por todos os $S$ filtros $\boldsymbol\Theta_{\boldsymbol\phi_i}$ gerando $S$ matrizes $C_{\boldsymbol\phi_i}(B_\mathbf{z})$. Utilizando a Equação (\ref{eq:02-02}) obtemos os valores de DSNR$_2$ das matrizes $C_{\boldsymbol\phi_i}(B_\mathbf{z})$. Assim, cada bloco $B_\mathbf{z}$ terá um vetor DSNR$_2$ associado denominado $\mathbf{d}_{B_\mathbf{z}}$ com dimensões $1 \times S$. Os vetores $\mathbf{d}_{B_\mathbf{z}}$ serão utilizados para treinamento do classificador {\it AdaBoost} utilizando a {\it toolbox} GML {\it AdaBoost} \cite{gentle-real-modest-adaboost}. A saída do digrama de treinamento consiste nos filtros $\boldsymbol\Theta_{\boldsymbol\phi_i}$, o classificador {\it AdaBoost} e o bloco médio dos padrões de interesse, denominado por $\boldsymbol\mu_\mathcal{U}$.
+
+A etapa de teste, apresentada no diagrama em blocos da Figura \ref{fig:teste}, pode ser descrita da seguinte maneira: primeiramente, a imagem é pré-processada. A seguir, utilizando uma janela deslizante, processamos cada bloco $B_{\mathbf{z}}$. As matrizes $C_{\boldsymbol\phi_{i}}(B_{\mathbf{z}})$ são obtidas através da filtragem entre $B_{\mathbf{z}}$, subtraído por
+$\boldsymbol\mu_\mathcal{U}$ (bloco médio dos padrões de interesse, determinado no treinamento), com
+cada um dos $S$ filtros $\mathbf{\Theta}_{\boldsymbol\phi_{i}}$ (obtidos no treinamento). Após, calculamos a DSNR$_{2}$ para cada
+$C_{\boldsymbol\phi_{i}}(B_{\mathbf{z}})$ resultando em um vetor DSNR$_{2}$ associado denominado $\mathbf{d}_{B_{\mathbf{z}}}$. O classificador {\it AdaBoost} irá categorizar $\mathbf{d}_{B_{\mathbf{z}}}$ como positivo (o centro de $B_{\mathbf{z}}$ é ponto fiducial) ou negativo (o centro de $B_{\mathbf{z}}$ não é ponto fiducial).
+
+
+\subsection{Processamento Paralelo dos Filtros Discriminativos}\label{sec:filtro-paralelo}
+
+Podemos notar na etapa de teste, descrita na Seção \ref{sec:sistema-pf}, que o processamento de cada bloco $B_{\mathbf{z}}$ tem impacto significativo no tempo de resposta do sistema. Considerando um exemplo em que as imagens possuem regiões elípticas de interesse que contêm $1100$ blocos e que cada bloco deve ser filtrado por $63$ filtros discriminativos então, para cada imagem, será necessário computarmos $69300$ operações de filtragem. Dessa forma, iremos modificar o processamentos dos blocos utilizando um modelo paralelo conforme representado na Figura \ref{fig:teste_paralelo}. Neste modelo, convoluímos $K$ filtros em paralelo com os blocos $B_{\mathbf{z}}$ ($K \leq S $), ou seja, realizamos $K$ filtragens ao mesmo tempo. Desta forma, as matrizes $C_{\boldsymbol\phi_i}(B_\mathbf{z})$, com $i=\{1,2,\ldots,K\}$ são geradas ao mesmo tempo (levando em consideração que a convolução de um bloco $B_{\mathbf{z}}$ com um filtro $\boldsymbol\Theta_{\boldsymbol\phi_i}$ consome o mesmo tempo de processamento). Como consequência, o tempo de resposta do sistema é reduzido.
+\begin{figure}[htb]
+ \begin{center}
+  % Requires \usepackage{graphicx}
+  \centering
+  \includegraphics [scale=0.7]{./figuras/diagrama_teste_paralelo_DF-PCA-B.eps}
+  \caption{Modelo paralelo do diagrama em blocos para teste do sistema de detecção de pontos fiduciais.}
+  \label{fig:teste_paralelo}
+ \end{center}
+\end{figure}
+
+
+\subsection{Procedimentos Experimentais e Resultados}
+
+Com o objetivo de avaliar o processamento paralelo dos filtros discriminativos, utilizamos um sistema de detecção, conforme descrito na Seção \ref{sec:sistema-pf}, projetado para 11 pontos fiduciais (observe a Figura \ref{fig:pfs}). Em nossos experimentos, para cada ponto fiducial, utilizamos um conjunto de 1718 imagens da base de dados {\it Feret} \cite{feret-artigo1,feret-artigo2} na etapa de treinamento para o projeto dos filtros discriminativos. Na etapa de teste, processamos 568 imagens, que não pertencem ao conjunto de treinamento, da mesma base. Os procedimentos experimentais utilizados para realizar o treinamento e teste do sistema proposto são os mesmos utilizados em \cite{icip-fd}.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{figuras/face_com_marcacoes.eps}
+\caption{Conjunto de 11 pontos fiduciais da face humana.}
+\label{fig:pfs}
+\end{figure}
+
+Neste trabalho, estamos interessados em avaliar o tempo de resposta do sistema de detecção de pontos fiduciais quando utilizamos um modelo paralelo para filtragem dos filtros discriminativos. Para realizar esta análise, dividimos o experimento em duas partes: na primeira, efetuamos a validação do sistema para 11 pontos fiduciais (Figura \ref{fig:pfs}) sem utilizar nenhum paralelismo para filtragem dos filtros discriminativos. Na segunda, validamos o sistema para os mesmos 11 pontos fiduciais, utilizando o modelo paralelo proposto. Nesta proposta, para o paralelismo, empregamos um conjunto de 8 núcleos para processamento. Em ambos os casos, verificamos o tempo consumido para as seguintes quantidades de filtros discriminativos: 53, 63, 83 e 100. Neste experimento, utilizamos computadores intel {\it core} i7, com 24Gbytes de memória RAM e velocidade de clock igual a 2,4GHz.
+
+Nas Figuras \ref{fig:curva00} à \ref{fig:curva09} apresentamos os gráficos referentes ao tempo médio de consumo de ambos os sistemas em função da quantidade de filtros discriminativos e os seus respectivos desvios padrões, para os pontos fiduciais 0, 1, 2, 6, 7 e 9, devido a simetria da face humana, apresentamos somente os gráficos obtidos dos pontos fiduciais localizados no lado esquerdo da face. Percebemos que o sistema com processamento paralelo reduz significativamente o tempo de resposta do sistema em todos os pontos fiduciais. Estes indícios nos levam a crer que o modelo paralelo proposto é eficiente. Podemos observar, dos resultados obtidos, que para o sistema proposto, um aumento significativo na quantidade de filtros discriminativos resulta em um pequeno incremento no tempo de processamento. Observamos ainda que o sistema proposto apresenta um desvio padrão próximo de zero. Os resultados obtidos para todos os pontos fiduciais estão na Tabela \ref{tab}.
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{figuras/curva_ponto00.eps}
+\caption{Tempo de simulação em função do número de filtros discriminativos (PF 0).}
+\label{fig:curva00}
+\end{figure}
+
+%\begin{figure}[!htb]
+%\centering
+%\includegraphics[scale=0.5]{figuras/curva_ponto01.eps}
+%\caption{Gráfico tempo de simulação em função do número de filtros discriminativos para o ponto fiducial 1.}
+%\label{fig:curva01}
+%\end{figure}
+%
+%\begin{figure}[!htb]
+%\centering
+%\includegraphics[scale=0.5]{figuras/curva_ponto02.eps}
+%\caption{Gráfico tempo de simulação em função do número de filtros discriminativos para o ponto fiducial 2.}
+%\label{fig:curva02}
+%\end{figure}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{figuras/curva_ponto06.eps}
+\caption{Tempo de simulação em função do número de filtros discriminativos (PF 6).}
+\label{fig:curva06}
+\end{figure}
+
+%\begin{figure}[!htb]
+%\centering
+%\includegraphics[scale=0.5]{figuras/curva_ponto07.eps}
+%\caption{Gráfico tempo de simulação em função do número de filtros discriminativos para o ponto fiducial 7.}
+%\label{fig:curva07}
+%\end{figure}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{figuras/curva_ponto09.eps}
+\caption{Tempo de simulação em função do número de filtros discriminativos (PF 9).}
+\label{fig:curva09}
+\end{figure}
+
+
+\begin{table*}[!htb] % aqui comeÃ§a o ambiente tabela
+\centering \footnotesize
+\caption{Resultados obtidos para 11 pontos fiduciais do sistema de detecção. Nesta tabela, apresentamos o tempo médio e o desvio padrão consumido pelo sistemas quando empregamos o modelo paralelo para filtragem ($C=8$) e não paralelo ($C=1$).} % igual ao ambiente figura
+
+\begin{tabular}{c|cc|cc|cc|cc} % com este comando dizemos quantas colunas terÃ¡ nossa tabela e a posiÃ§Ã£o do texto dentro de cada coluna. Aqui temos tres colunas (pois sÃ£o trÃªs "c" dentre {}) e o texto estar centralizado em todas elas (indicado pelo "c", se quisermos alinhados a esquerda "l" ou direita "r"
+
+\hline % este comando coloca uma linha na tabela
+
+ \multicolumn{8}{c}{{\bf Quantidade de Filtros Discriminativos (FD) utilizados}} \\ % esta Ã© a primeira linha de nossa tabela. O sÃ­mbolo "&" separa as colunas e "\\" indica que aquela linha acabou.
+\hline
+& \multicolumn {2}{c}{{\bf FD} $= 53$} & \multicolumn {2}{c}{{\bf FD} $= 63$} & \multicolumn {2}{c}{{\bf FD} $= 83$} & \multicolumn {2}{c}{{\bf FD} $= 100$} \\
+{\bf PF}  & $C=1$ & $C=8$ & $C=1$ & $C=8$ & $C=1$ & $C=8$ & $C=1$ & $C=8$ \\
+\hline
+0 & 19.6 $\pm$ 2.9 & 2.9 $\pm$ 0.0 & 23.7 $\pm$  3.3 & 3.4 $\pm$ 0.1 & 19.3 $\pm$ 5.5 & 4.4 $\pm$ 0.2 & 31.5 $\pm$ 6.7 & 5.3 $\pm$ 0.0  \\
+1 & 12.2 $\pm$ 1.8 & 2.0 $\pm$ 0.0 & 14.9 $\pm$  2.4 & 2.3 $\pm$ 0.0 & 17.4 $\pm$ 3.2 & 2.9 $\pm$ 0.1 & 23.3 $\pm$ 2.7 & 3.4 $\pm$ 0.0  \\
+2 & 18.9 $\pm$ 2.8 & 2.9 $\pm$ 0.0 & 23.1 $\pm$  3.6 & 3.4 $\pm$ 0.2 & 18.6 $\pm$ 5.1 & 4.4 $\pm$ 0.2 & 32.8 $\pm$ 6.7 & 5.2 $\pm$ 0.0  \\
+3 & 5.8  $\pm$ 0.6 & 1.0 $\pm$ 0.0 & 6.9  $\pm$  0.7 & 1.2 $\pm$ 0.0 & 8.1  $\pm$ 1.3 & 1.6 $\pm$ 0.0 & 10.6 $\pm$ 1.4 & 1.8 $\pm$ 0.0  \\
+4 & 8.4  $\pm$ 1.0 & 1.4 $\pm$ 0.0 & 9.1  $\pm$  1.6 & 1.7 $\pm$ 0.0 & 12.3 $\pm$ 2.1 & 2.1 $\pm$ 0.1 & 15.4 $\pm$ 2.2 & 2.5 $\pm$ 0.0  \\
+5 & 13.0 $\pm$ 2.2 & 2.0 $\pm$ 0.0 & 15.7 $\pm$  2.2 & 2.3 $\pm$ 0.0 & 16.6 $\pm$ 3.4 & 3.1 $\pm$ 0.1 & 23.8 $\pm$ 3.9 & 3.6 $\pm$ 0.0  \\
+6 & 16.2 $\pm$ 2.5 & 2.5 $\pm$ 0.0 & 19.3 $\pm$  3.1 & 2.8 $\pm$ 0.1 & 23.1 $\pm$ 4.3 & 3.7 $\pm$ 0.0 & 27.3 $\pm$ 5.8 & 4.4 $\pm$ 0.0  \\
+7 & 11.6 $\pm$ 2.5 & 2.1 $\pm$ 0.0 & 15.6 $\pm$  2.2 & 2.5 $\pm$ 0.0 & 20.6 $\pm$ 2.7 & 3.2 $\pm$ 0.1 & 15.6 $\pm$ 4.0 & 3.8 $\pm$ 0.1  \\
+8 & 7.7  $\pm$ 2.2 & 2.0 $\pm$ 0.0 & 15.5 $\pm$  1.8 & 2.3 $\pm$ 0.1 & 20.3 $\pm$ 2.8 & 3.3 $\pm$ 0.2 & 14.6 $\pm$ 4.2 & 3.5 $\pm$ 0.0  \\
+9 & 18.0 $\pm$ 4.4 & 4.2 $\pm$ 0.0 & 35.7 $\pm$  3.7 & 5.5 $\pm$ 0.3 & 46.3 $\pm$ 5.7 & 6.5 $\pm$ 0.4 & 33.5 $\pm$ 6.1 & 7.7 $\pm$ 0.0  \\
+10& 34.3 $\pm$ 7.4 & 7.9 $\pm$ 0.0 & 40.1 $\pm$ 12.9 & 10.6$\pm$ 0.5 & 55.7 $\pm$ 17.2&12.2 $\pm$ 0.5 & 61.9 $\pm$ 10.5& 14.6$\pm$ 0.1  \\
+
+\hline
+\end{tabular}
+\label{tab}
+\normalsize
+\end{table*}
+
+\section{Conclusão}\label{sec:con}
+Neste trabalho apresentamos um modelo eficiente para filtragem dos filtros discriminativos robustos em um
+sistema de detecção de pontos fiduciais de faces humanas. O modelo paralelo dos filtros discriminativos foi avaliado em um sistema
+de detecção de pontos fiduciais projetado para 11 pontos. Nos experimentos, para cada ponto fiducial, utilizamos um conjunto de 1718 para o projeto dos filtros discriminativos e para processamento usamos 568 imagens. Variamos a quantidade de filtros discriminativos entre 53, 63, 83 e 100. Os resultados demonstraram que, em todos os casos, o modelo paralelo proposto reduz significativamente o tempo de resposta do sistema. Dessa forma, podemos inferir que o modelo paralelo proposto é eficiente em todos os casos apresentados nos experimentos.
+
+
+
+%SECOES ------------------------------------------------------------------------------
+\section*{Agradecimentos}
+Agradecemos à Fundação de Amparo à Pesquisa do Estado do Amazonas (FAPEAM) e a Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES) pelo apoio financeiro.
+
+%SECOES ------------------------------------------------------------------------------
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+%\begin{thebibliography}{1}
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+%\end{thebibliography}
+
+
+\bibliographystyle{IEEEtran}
+%
+\bibliography{REFERENCIAS_}
+
+
+
+% that's all folks
+\end{document}
+
+
